@@ -22,5 +22,4 @@ tree *tree::BuildTree()
    }
    fclose( f );
    delete c;
-   return 0;
 }
