@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <windows.h>
 
-tree *tree::input()
+tree *tree::BuildTree()
 {
    char *c = new char('0');
    FILE *f = NULL;
@@ -13,10 +13,13 @@ tree *tree::input()
    switch ( *c )
    {
       case '(':
-         tree *t = new tree;
          fscanf_s( f, "%c", c );
+         tree *t = new tree( *c, BuildTree( ), BuildTree( ) );
+         fscanf_s( f, "%c", c );
+         return t;
+      case ',': return BuildTree( );
+      case '0': return NULL;
    }
-
    fclose( f );
    delete c;
    return 0;

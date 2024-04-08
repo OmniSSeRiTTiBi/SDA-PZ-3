@@ -9,7 +9,7 @@ struct tree
    tree( char _elem = '0', tree *_left = NULL, tree *_right = NULL ) :
       elem( _elem ), left( _left ), right( _right ) { };
 
-   tree *input( );
+   tree *BuildTree( );
    void PREORDER( tree *t );
    void INORDER( tree *t );
    void POSTORDER( tree *t );
